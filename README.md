@@ -6,14 +6,16 @@
 * [Scala language site](https://www.scala-lang.org/) | [Scala Install](https://www.scala-lang.org/download/)
 
 ## Videos / Playlists
-### SBT  
+### Playlists
+#### SBT  
 * [SBT Playlist](https://www.youtube.com/watch?v=itiL7QT2WkI&list=PLmtsMNDRU0BwinL745E_cv1PDeR_jhlMI)
 * RockTheJVM blogs:
   * [An Introduction to SBT](https://blog.rockthejvm.com/sbt-tutorial/)
+* make sure to change directory to: projects/playlists/sbt
 
 * Basic Setup
   * Create file names build.sbt in folder root
-  * Run: `$ sbt` in root of folder 
+  * Run: `$ sbt` in root of folder (projects/playlists/sbt)
     * this will setup the basic stucture for the project
   * Create source file directories (relative to root):
     ```bash
