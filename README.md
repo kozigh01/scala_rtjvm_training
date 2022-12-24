@@ -60,7 +60,39 @@
       * can run tests that match a regex: `sbt> Test / testOnly *Test`
       * test all the tests: `sbt> test`
 * Advanced setup (including multi-module setup)
-  
+  * multi-module projects
+    * edit the build.sbt file
+      * scope the main variables to the "ThisBuild" scope (prepend "ThisBuild / ")
+      * add lazy vals for each module
+      * run `sbt`
+    * can add build.sbt files in each individual module or can add ".settings()" to module val in the main build.sbt - the run `$ sbt` at root
+    * can switch to specific module in sbt repl with `sbt> project core'
+  * project directory files:
+    * can create files in the "project" directory which are automatically available from all built.sbt files 
+  * Plugins
+    * add file plugins.sbt in the "project" directory
+    * edit plugins.sbt to add plugins:
+      ```
+      addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "1.2.0")
+      ```
+    * edit a build.sbt to use the plugin:
+      ```
+      lazy val core = (project in file("projects/core"))
+        .settings(
+          assembly / mainClass := Option("com.mkozi.core.CoreApp"),
+          name := "Core"
+        )
+      ```
+    * start sbt and run:
+      ```bash
+      sbt> project core
+
+      # this will run the "assembly" project and build a .jar file for this project
+      sbt> assembly
+      ```
+    * can run the jar with `java -jar projects/core/target/scala-3.2.0/Core-assembly-1.0.0.ja`
+    * can define plugins globally for machine
+
 
 
 
