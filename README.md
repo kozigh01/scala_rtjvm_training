@@ -59,7 +59,7 @@
       * run the test: `sbt> Test / testOnly com.mkozi.SimpleTest`
       * can run tests that match a regex: `sbt> Test / testOnly *Test`
       * test all the tests: `sbt> test`
-* Advanced setup (including multi-module setup)
+* Part 2 (including multi-module setup)
   * multi-module projects
     * edit the build.sbt file
       * scope the main variables to the "ThisBuild" scope (prepend "ThisBuild / ")
@@ -79,7 +79,7 @@
       ```
       lazy val core = (project in file("projects/core"))
         .settings(
-          assembly / mainClass := Option("com.mkozi.core.CoreApp"),
+          assembly / mainClass := Option("com.mkozi.playlists.sbt.core.CoreApp"),
           name := "Core"
         )
       ```
@@ -90,9 +90,8 @@
       # this will run the "assembly" project and build a .jar file for this project
       sbt> assembly
       ```
-    * can run the jar with `java -jar projects/core/target/scala-3.2.0/Core-assembly-1.0.0.ja`
+    * can run the jar with `java -jar projects/playlists/sbt/core/target/scala-3.2.0/Core-assembly-1.0.0.ja`
     * can define plugins globally for machine
-
-
-
-
+* Part 3: resolvers, custom tasks, cross-compiling
+  * resolvers:
+    
