@@ -90,8 +90,8 @@
       # this will run the "assembly" project and build a .jar file for this project
       sbt> assembly
       ```
-    * can run the jar with `java -jar projects/playlists/sbt/core/target/scala-3.2.0/Core-assembly-1.0.0.ja`
+    * can run the jar with `java -jar target/scala-3.2.0/Core-assembly-1.0.0.ja`
     * can define plugins globally for machine
 * Part 3: resolvers, custom tasks, cross-compiling
   * resolvers:
-    
+

@@ -2,12 +2,13 @@ ThisBuild / scalaVersion := "3.2.0"
 ThisBuild / version := "1.0.0"
 ThisBuild / organization := "com.mkozi"
 
-lazy val core = (project in file("projects/playlists/sbt/core"))
+lazy val core = (project in file("core"))
+// lazy val core = (project in file("projects/playlists/sbt/core"))
   .settings(
     name := "Core",
-    assembly / mainClass := Option("com.mkozi.playlists.sbt.core.CoreApp")
+    assembly / mainClass := Option("com.mkozi.core.CoreApp")
   )
-lazy val server = (project in file("projects/playlists/sbt/server"))
+lazy val server = (project in file("server"))
   .dependsOn(core)
   .settings(  
     name := "Server",
