@@ -5,3 +5,6 @@ object Main extends App:
 
   println("Learning SBT!!!  It rocks!")
   println(fansiStr)
+
+  import com.mkozi.core.Lib1
+  Lib1.greeting
